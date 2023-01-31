@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="591ca114-82fa-483b-a6cd-d61e86a7b6e5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MaceraOyunu.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/BadCharacter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/Character.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/GoodCharacter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/badCharacters/Bear.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/badCharacters/Vampire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/badCharacters/Zombie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/goodCharacters/Archer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/goodCharacters/Knight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/character/goodCharacters/Samurai.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/armors/Armor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/armors/Average.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/armors/Heavy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/armors/Light.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/weapons/Gun.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/weapons/Pistol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/weapons/Sword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/items/weapons/Weapon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/location/dangerous/Cave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/location/dangerous/DangerousLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/location/dangerous/Forest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/location/dangerous/River.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/location/safe/Safe_Home.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/location/safe/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prize/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prize/Prize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prize/Water.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prize/Wood.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2L00luBAzXId0p6f7PAibJ1UU9L" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="MaceraOyunu" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="591ca114-82fa-483b-a6cd-d61e86a7b6e5" name="Changes" comment="" />
+      <created>1674992846705</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1674992846705</updated>
+      <workItem from="1674992847785" duration="1407000" />
+      <workItem from="1674994310794" duration="30888000" />
+      <workItem from="1675102447704" duration="8893000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/character/Character.java</url>
+          <line>21</line>
+          <properties class="character.Character" method="getHealth">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/location/safe/Store.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/location/safe/Store.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/location/safe/Store.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/location/safe/Store.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
