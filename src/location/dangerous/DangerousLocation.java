@@ -1,53 +1,81 @@
 package location.dangerous;
 
-import character.BadCharacter;
-import character.GoodCharacter;
-import character.badCharacters.Zombie;
+import character.*;
 import prize.Prize;
-
+import java.util.Random;
 import java.util.Scanner;
 
-public abstract class DangerousLocation <b extends BadCharacter,p extends Prize> {
-    public boolean isFoodTaken= false;
-    static int num ;
-    {
-        num = (int) (Math.random() * 3+1);
-    }
-    public b[] badCharacters ;
-    p prize ;
+public abstract class DangerousLocation <m extends Monster,p extends Prize> {
+    public boolean isPrizeTaken = false;
+    public m[] monsters;
+    p prize;
 
-    public void battle(GoodCharacter player) {
+    public boolean battle(Fighter player,int numberOfMonsters) {
+        String monsterName = monsters[0].getClass().getSimpleName();
+
         Scanner sc = new Scanner(System.in);
         System.out.println(player);
-        if(num ==1)
-            System.out.println("Here is "+num +" "+ Zombie.class.getSimpleName());
-        else{System.out.println("Here are "+num +" "+Zombie.class.getSimpleName()+"s");}
-
+        if(numberOfMonsters ==1)
+            System.out.print("Here is "+numberOfMonsters +" "+ monsterName);
+        else{System.out.print("Here are "+numberOfMonsters +" "+monsterName+"s");}
+        System.out.println("\t"+monsters[0]);
         System.out.println("do you want to fight ? n/y");
         String answer = sc.next();
         if(answer.equalsIgnoreCase("y")){
+            int i = 0;
             outer:
-            for (BadCharacter badCharacter : badCharacters) {
+            for (Monster monster : monsters) {
+                boolean playerFirst = new Random().nextBoolean();
+                i++;
                 while (player.getHealth() > 0) {
-                    badCharacter.setHealth(badCharacter.getHealth() - player.getDamage());
-                    player.setHealth(player.getHealth() - badCharacter.getDamage());
+                    if (playerFirst) playerHitting(player,monster);
+                    else if(!monsterHitting(player,monster)) break outer;
                     System.out.println(
                             "player health : " + player.getHealth() + "\n" +
-                                    Zombie.class.getSimpleName()+" health : " + badCharacter.getHealth() + "\n"
+                            (i) +". "+monster.getClass().getSimpleName()+" health : " + monster.getHealth() + "\n"
                     );
                     if (player.getHealth() <= 0)
                         break outer;
-                    if (badCharacter.getHealth() <= 0)
+                    if (monster.getHealth() <= 0)
                         break;
                 }
-                player.setMoney(player.getMoney()+badCharacter.getMoney());
+                player.setMoney(player.getMoney()+ monster.getMoney());
             }
-            if(!isFoodTaken){
-                isFoodTaken=true;
-                player.prizes.add(this.prize);
+
+            if (player.getHealth()>0){
+                if(!isPrizeTaken && this.prize!=null){
+                    isPrizeTaken =true;
+                    player.prizes.add(this.prize);
+                }
+                System.out.println("you beat the "+monsterName+"s successfully");
+                return true;
             }
         }
-        if (player.getHealth()>0)
-            System.out.println("you beat the "+Zombie.class.getSimpleName()+"s successfully");
+    return false;
     }
+    void playerHitting(Fighter f,Monster m){
+        int weaponDamage = f.weapon!=null? f.weapon.getDamage():0;
+        int armorObstruction = f.armor!=null? f.armor.getObstruction():0;
+        System.out.println("you hit !");
+        m.setHealth(m.getHealth() - f.getDamage() - weaponDamage);
+        if (m.getHealth()>0){
+            System.out.println("the "+ m.getClass().getSimpleName() +" hit !");
+            f.setHealth(f.getHealth() + armorObstruction - m.getDamage());
+        }
+    }
+    boolean monsterHitting(Fighter f,Monster m){
+        int weaponDamage = f.weapon!=null? f.weapon.getDamage():0;
+        int armorObstruction = f.armor!=null?f.armor.getObstruction():0;
+
+        if (m.getHealth()>0){
+            System.out.println("the "+ m.getClass().getSimpleName() +" hit !");
+            f.setHealth(f.getHealth() + armorObstruction - m.getDamage());
+            if (f.getHealth()<=0)
+                return false;
+        }
+        System.out.println("you hit !");
+        m.setHealth(m.getHealth() - f.getDamage() - weaponDamage);
+    return true;
+    }
+
 }

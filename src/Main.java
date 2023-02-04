@@ -1,11 +1,14 @@
-import character.GoodCharacter;
-import character.goodCharacters.Archer;
-import character.goodCharacters.Knight;
-import character.goodCharacters.Samurai;
+import character.Fighter;
+import character.fighters.Archer;
+import character.fighters.Knight;
+import character.fighters.Samurai;
 import location.dangerous.Cave;
+import location.dangerous.Desert;
 import location.dangerous.Forest;
 import location.dangerous.River;
+import location.safe.Safe_Home;
 import location.safe.Store;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -25,17 +28,19 @@ public class Main {
             case 0 : break;
         }
 
+
         sc.close();
     }
     static void showPlaceOptions(){
         System.out.println("where do you want to go ?");
         System.out.println("""
-                1. Cave
-                2. Forest
-                3. River
-                4. Store
-                5. safe Home
-
+                1. Store
+                2. safe Home
+                3. Cave
+                4. Forest
+                5. River
+                6. Desert
+                
                 0. Exit
                 """);
         System.out.println();
@@ -51,13 +56,16 @@ public class Main {
                 0. Exit
                 """);
     }
-    static void fight(GoodCharacter player) throws NoSuchFieldException, IllegalAccessException {
+    static void fight(Fighter player) throws NoSuchFieldException, IllegalAccessException {
         Scanner sc = new Scanner(System.in);
         outer :
         while (true){
-
-            if(player.getHealth()<= 0){
-                System.out.println("you lost \nPress 'r' to restart");
+            if(player.prizes.size()== 3){
+                System.out.println("******************************\n*       CONGRATULATION       *\n******************************");
+                System.out.println(player.prizes);
+            }
+            else if(player.getHealth()<= 0){
+                System.out.println("******************************\n*          you lost          *\n*    Press 'r' to restart    *\n******************************");
                 if(!Objects.equals(sc.nextLine(), "r"))
                     break ;
                 System.out.println("******************************************\n");
@@ -67,11 +75,15 @@ public class Main {
             int in = Integer.parseInt(sc.nextLine());
 
             switch (in){
-                case 1 : new Cave().battle(player); break;
-                case 2 : new Forest().battle(player); break;
-                case 3 : new River().battle(player); break;
-                case 4 : Store.Receive(player); break;
-                //case 5 : Safe_Home.Receive(samurai); break;
+                case 1 : Store.Receive(player); break;
+                case 2 : Safe_Home.Receive(player); break;
+                case 3 : if (!Cave.IS_FOOD_TAKEN) new Cave().battle(player,3);else System.out.println("you have food already");
+                    break;
+                case 4 : if(!Forest.IS_WOOD_TAKEN) new Forest().battle(player,3); else System.out.println("you have wood already");
+                    break;
+                case 5 : if (!River.IS_WATER_TAKEN) new River().battle(player,3); else System.out.println("you have water already");
+                    break;
+                case 6 : new Desert().battle(player,5); break;
                 case 0 : break outer;
             }
             System.out.println(player);

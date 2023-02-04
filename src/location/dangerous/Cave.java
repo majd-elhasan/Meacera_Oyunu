@@ -1,20 +1,19 @@
 package location.dangerous;
 
-import character.GoodCharacter;
-import character.badCharacters.Zombie;
+import character.Fighter;
+import character.monsters.Zombie;
 import prize.Food;
 public class Cave extends DangerousLocation<Zombie, Food>{
-
-    {
-        this.badCharacters = new Zombie[num];
-        for(int i=0;i<num;i++){
-            this.badCharacters[i]=new Zombie();
+    public static boolean IS_FOOD_TAKEN = false;
+    @Override
+    public boolean battle(Fighter player,int MaxNumberOfMonsters) {
+        int numberOfMonsters =  (int) (Math.random() * MaxNumberOfMonsters+1);
+        this.monsters = new Zombie[numberOfMonsters];
+        for(int i=0;i<numberOfMonsters;i++){
+            this.monsters[i] = new Zombie();
         }
         this.prize = new Food();
-    }
-
-    @Override
-    public void battle(GoodCharacter player) {
-    super.battle(player);
+        if (!IS_FOOD_TAKEN) IS_FOOD_TAKEN =  super.battle(player,numberOfMonsters);
+        return IS_FOOD_TAKEN;
     }
 }

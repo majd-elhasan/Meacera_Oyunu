@@ -1,9 +1,7 @@
 package location.safe;
 
-import character.GoodCharacter;
+import character.Fighter;
 
 public class Safe_Home {
-    public static void Receive(GoodCharacter player) throws NoSuchFieldException, IllegalAccessException {
-        player.setHealth((int) player.getClass().getField("Max_Health").get(player));
-    }
+    public static void Receive(Fighter player){player.setHealth( player.getMax_Health());}
 }

@@ -1,48 +1,52 @@
 package location.safe;
 
-import character.GoodCharacter;
-import items.weapons.Gun;
-import items.weapons.Pistol;
-import items.weapons.Sword;
+import character.Fighter;
+import items.armors.*;
+import items.weapons.*;
+
 import java.util.Scanner;
 
 public class Store {
 
-    static int Biggest_Class_Name_Length =0;
-    final static Class[] subClassesOfWeapon = {Pistol.class, Sword.class, Gun.class};
-   public static void Receive(GoodCharacter player) throws NoSuchFieldException, IllegalAccessException {
+    static int Biggest_WCNL =0;
+    static int Biggest_ACNL =0;
+    final static Weapon[] subClassesOfWeapon = {new Pistol(), new Sword(), new Gun()};
+    final static Armor[] subClassesOfArmor = {new Light(), new Average(), new Heavy()};
+   public static void Receive(Fighter player){
        Scanner sc = new Scanner(System.in);
-       for (int i=0;i<subClassesOfWeapon.length;i++){
-           if (Biggest_Class_Name_Length < subClassesOfWeapon.getClass().getSimpleName().length()) {
-               Biggest_Class_Name_Length = subClassesOfWeapon.getClass().getSimpleName().length();
+       for (Weapon w : subClassesOfWeapon) {
+           if (Biggest_WCNL < w.getClass().getSimpleName().length()) {
+               Biggest_WCNL = w.getClass().getSimpleName().length();
+           }
+       }
+       for (Armor a : subClassesOfArmor) {
+           if (Biggest_ACNL < a.getClass().getSimpleName().length()) {
+               Biggest_ACNL = a.getClass().getSimpleName().length();
            }
        }
         System.out.println("what do you want to buy ?");
-        System.out.println("1. Weapon\n2. Armor\n");
-        int answer =0;
+        System.out.println("1. Weapon\n2. Armor\n\n3. Quit");
 
-       answer = Integer.parseInt(sc.nextLine());
+       int answer = Integer.parseInt(sc.nextLine());
 
-        if(answer == 1){
-             buyWeapon(player);
-        } else if (answer ==2) {
-            buyArmor();
-        }else {
-            System.out.println("you didn't buy anything !");
-        }
-
-
+       switch (answer){
+           case 1 -> buyWeapon(player);
+           case 2 -> buyArmor(player);
+           default -> System.out.println("you didn't buy anything !");
+       }
     }
-   static private void buyWeapon(GoodCharacter player) throws NoSuchFieldException, IllegalAccessException {
+   static private void buyWeapon(Fighter player){
        Scanner sc = new Scanner(System.in);
        System.out.println("available weapons :\n");
-       for (Class aClass : subClassesOfWeapon) {
-           System.out.println(aClass.getSimpleName()+String.format("%" + ((Biggest_Class_Name_Length)-aClass.getSimpleName().length() )+ "s","")
-                   + "=> " +String.format("%"+2+"s","ID : " + aClass.getField("ID").get(aClass) )
-                   + String.format("%" + 15 + "s", " DAMAGE : " + aClass.getField("DAMAGE").get(aClass) )
-                   + String.format("%" + 15 + "s", "PRICE : " + aClass.getField("PRICE").get(aClass) ) + "\n");
+       for (Weapon w : subClassesOfWeapon) {
+           System.out.println(w.getId()+". "
+                   + w.getClass().getSimpleName()+String.format("%" + ((Biggest_WCNL+1)-w.getClass().getSimpleName().length() )+ "s","")
+                   + "=> "
+                   + String.format("%" + 15 + "s", " DAMAGE : " + w.getDamage() )
+                   + String.format("%" + 15 + "s", "PRICE : " + w.getPrice() ));
        }
-        String answer = sc.nextLine();
+       System.out.println("\npress different key to quit");
+       String answer = sc.nextLine();
        switch (Integer.parseInt(answer)) {
            case 1 -> {
                if (player.getMoney() >= Pistol.PRICE) {
@@ -69,9 +73,49 @@ public class Store {
                    System.out.println("you don't have enough money to buy a Gun");
                }
            }
+           default -> System.out.println("you didn't buy a weapon !");
        }
    }
 
-    static private void buyArmor(){
+    static private void buyArmor(Fighter player){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("available armors :\n");
+        for (Armor a : subClassesOfArmor) {
+            System.out.println(a.getId()+". "
+                    + a.getClass().getSimpleName()+String.format("%" + ((Biggest_ACNL+1)-a.getClass().getSimpleName().length() )+ "s","")
+                    + "=> "
+                    + String.format("%" + 15 + "s", " OBSTRUCTION : " + a.getObstruction() )
+                    + String.format("%" + 15 + "s", "PRICE : " + a.getPrice() ));
+        }
+        System.out.println("\npress different key to quit");
+        String answer = sc.nextLine();
+        switch (Integer.parseInt(answer)) {
+            case 1 -> {
+                if (player.getMoney() >= Light.PRICE) {
+                    player.setMoney(player.getMoney() - Light.PRICE);
+                    player.armor = new Light();
+                    System.out.println("now you have a Light Armor");
+                } else {
+                    System.out.println("you don't have enough money to buy a Light Armor");
+                }
+            }
+            case 2 -> {
+                if (player.getMoney() >= Average.PRICE) {
+                    player.setMoney(player.getMoney() - Average.PRICE);
+                    player.armor = new Average();
+                } else {
+                    System.out.println("you don't have enough money to buy an Average Armor");
+                }
+            }
+            case 3 -> {
+                if (player.getMoney() >= Heavy.PRICE) {
+                    player.setMoney(player.getMoney() - Heavy.PRICE);
+                    player.armor = new Heavy();
+                } else {
+                    System.out.println("you don't have enough money to buy a Heavy Armor");
+                }
+            }
+            default -> System.out.println("you didn't buy an armor !");
+        }
     }
 }
