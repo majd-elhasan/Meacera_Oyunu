@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="591ca114-82fa-483b-a6cd-d61e86a7b6e5" name="Changes" comment="canceled using reflection methods to simplify the context">
-      <change afterPath="$PROJECT_DIR$/src/character/monsters/Snake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/location/dangerous/Desert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character/BadCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/character/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character/GoodCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/character/Fighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character/badCharacters/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/character/monsters/Bear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character/badCharacters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/character/monsters/Vampire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character/badCharacters/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/character/monsters/Zombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character/goodCharacters/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/character/fighters/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character/goodCharacters/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/character/fighters/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character/goodCharacters/Samurai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/character/fighters/Samurai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/armors/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/armors/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/armors/Average.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/armors/Average.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/armors/Heavy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/armors/Heavy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/armors/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/armors/Light.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items/weapons/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/weapons/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/location/dangerous/Cave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/location/dangerous/Cave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/location/dangerous/DangerousLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/location/dangerous/DangerousLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/location/dangerous/Forest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/location/dangerous/Forest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/location/dangerous/River.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/location/dangerous/River.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/location/safe/Safe_Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/location/safe/Safe_Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/location/safe/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/location/safe/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prize/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prize/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prize/Prize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prize/Prize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prize/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prize/Water.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prize/Wood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prize/Wood.java" afterDir="false" />
-    </list>
+    <list default="true" id="591ca114-82fa-483b-a6cd-d61e86a7b6e5" name="Changes" comment="canceled using reflection methods to simplify the context" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +75,7 @@
       <workItem from="1674992847785" duration="1407000" />
       <workItem from="1674994310794" duration="30888000" />
       <workItem from="1675102447704" duration="18179000" />
-      <workItem from="1675508676299" duration="28622000" />
+      <workItem from="1675508676299" duration="29138000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit, before using getFields() in Store.buyWeapon method.">
       <created>1675191529858</created>
@@ -112,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675191529858</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="canceled using reflection methods to simplify the context">
+      <created>1675540201612</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675540201612</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
